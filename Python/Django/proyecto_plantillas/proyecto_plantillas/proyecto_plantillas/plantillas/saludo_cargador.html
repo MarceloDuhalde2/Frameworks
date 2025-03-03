@@ -1,0 +1,16 @@
+<html>
+    <body>
+        <h2 style="color: red">Hola Señor</h2>
+    <body>
+    <p>Listado de temas:</p>
+        {% for item_tema in temas %}
+            <li>{{item_tema|first|upper}}</li>
+        {% endfor %}
+    
+        {% if temas2 %}
+            <p>temas 2 tiene elementos</p>
+        {% else %}
+            <p>temas 2 no tiene elementos</p>
+        {% endif %}
+    
+</html>
