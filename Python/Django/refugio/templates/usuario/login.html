@@ -1,0 +1,33 @@
+{% extends "base/base.html" %}
+{% block title %}
+Mascotas
+{% endblock %}
+{% block navbar %}
+{% endblock %}
+{% block content %}
+<form method="post">
+    {% csrf_token %}
+    <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+            <div class="form-group">
+                <label for="{{form.username.name}}">{{form.username.label}}</label>
+                <input class="form-control" type="text" name="{{form.username.name}}">
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+            <div class="form-group">
+                <label for="{{form.password.name}}">{{form.password.label}}</label>
+                <input class="form-control" type="password" name="{{form.password.name}}">
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+            <a href="{% url 'password_reset' %}">Olvidé mi contraseña</a>
+            <button type="submit" class="btn btn-primary">Ingresar</button>
+        </div>
+    </div>  
+</form>
+{% endblock %}
