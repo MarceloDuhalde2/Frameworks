@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lista de Tareas</title>
+</head>
+<body>
+    <h1>Lista de Tareas</h1>
+    <p>
+        {% if user.is_authenticated %}
+            Bienvenido, {{ user.username }}!
+            <form method="post" action="{% url 'tareas:logout' %}" style="display:inline;">
+                {% csrf_token %}
+                <button type="submit">Cerrar Sesión</button>
+            </form>
+        {% else %}
+            <a href="{% url 'tareas:login' %}">Iniciar Sesión</a>
+        {% endif %}
+    </p>
+    <ul>
+        {% for tarea in tareas %}
+            <li>
+                <a href="{% url 'tareas:tarea_detalle' pk=tarea.pk %}">{{ tarea.titulo }}</a> 
+                ({{ tarea.usuario.username }})
+            </li>
+        {% empty %}
+            <li>No hay tareas.</li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'tareas:tarea_crear' %}">Crear nueva tarea</a>
+</body>
+</html>

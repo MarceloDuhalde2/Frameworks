@@ -1,0 +1,51 @@
+# Archivos generados por Python
+__pycache__
+*.py[cod]
+*.pyc
+*.pyo
+*.pyd
+.Python
+env/
+venv/
+env.bak/
+venv.bak/
+
+# Archivos de configuración y secretos
+.env
+.local_settings.py
+*.sqlite3
+
+# Archivos de migraciones (opcional, puedes incluir __init__.py si quieres)
+migrations/*.py
+
+# Archivos de desarrollo y depuración
+*.log
+*.pot
+*.bak
+*.swp
+*.swo
+*.DS_Store
+*.vscode
+.idea
+
+# Archivos de build y dependencias
+dist/
+build/
+*.egg-info
+pip-wheel-metadata/
+pip-delete-this-directory.txt
+
+# Archivos de pruebas y cobertura
+.coverage
+htmlcov/
+.tox/
+.nox/
+.cache
+
+# Archivos de static y media generados
+staticfiles/
+media/
+
+# Archivos de configuración local
+db.sqlite3
+*.db
