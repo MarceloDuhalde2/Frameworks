@@ -46,7 +46,7 @@ Sigue estos pasos para configurar el proyecto localmente:
     ```
 
 4. **Configura la base de datos:**
-El proyecto usa SQLite por defecto (db.sqlite3). Si deseas usar otra base de datos (como PostgreSQL), ajusta DATABASES en tareas_project/settings.py.
+   - El proyecto usa SQLite por defecto (db.sqlite3). Si deseas usar otra base de datos (como PostgreSQL), ajusta DATABASES en tareas_project/settings.py.
 
 5. **Aplica las migraciones para crear las tablas:**
     ```bash
