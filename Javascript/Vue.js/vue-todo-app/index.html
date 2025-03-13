@@ -1,117 +1,13 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lista de Tareas - Vue.js</title>
-    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
-</head>
-<body>
-    <div id="app">
-        <h1>Mi Lista de Tareas</h1>
-        <input type="text" v-model="nuevaTarea" @keyup.enter="agregarTarea" placeholder="Nueva tarea">
-        <p>Tareas pendientes: {{ tareasPendientes }}</p>
-        <button @click="mostrarCompletadas = !mostrarCompletadas">
-            {{ mostrarCompletadas ? 'Mostrar Pendientes' : 'Mostrar Completadas' }}
-        </button>
-        <button @click="eliminarCompletadas" :disabled="!hayCompletadas">Eliminar Completadas</button>
-        <div v-if="tareasFiltradas.length === 0">
-            <p>No hay {{ mostrarCompletadas ? 'tareas completadas' : 'tareas pendientes' }}.</p>
-        </div>
-        <ul v-else>
-            <task-item
-                v-for="tarea in tareasFiltradas"
-                :key="tarea.id"
-                :tarea="tarea"
-                @toggle="toggleTarea"
-            />
-        </ul>
-    </div>
-
-    <script>
-        const { createApp, ref, computed } = Vue;
-    
-        const TaskItem = {
-            props: ['tarea'],
-            template: `
-                <li>
-                    <input type="checkbox" v-model="tarea.completada" @change="toggle">
-                    <span :class="{ 'completed': tarea.completada }">{{ tarea.texto }}</span>
-                </li>
-            `,
-            methods: {
-                toggle() {
-                    this.$emit('toggle', this.tarea);
-                }
-            }
-        };
-    
-        createApp({
-            components: {
-                TaskItem
-            },
-            setup() {
-                const tareas = ref([]);
-                const nuevaTarea = ref('');
-                const mostrarCompletadas = ref(false);
-    
-                const tareasFiltradas = computed(() => {
-                    return mostrarCompletadas.value
-                        ? tareas.value.filter(tarea => tarea.completada)
-                        : tareas.value.filter(tarea => !tarea.completada);
-                });
-    
-                const tareasPendientes = computed(() => {
-                    return tareas.value.filter(tarea => !tarea.completada).length;
-                });
-    
-                const hayCompletadas = computed(() => {
-                    return tareas.value.some(tarea => tarea.completada);
-                });
-    
-                function agregarTarea() {
-                    if (nuevaTarea.value.trim()) {
-                        tareas.value.push({
-                            id: Date.now(),
-                            texto: nuevaTarea.value.trim(),
-                            completada: false
-                        });
-                        nuevaTarea.value = '';
-                    }
-                }
-    
-                function toggleTarea(tarea) {
-                    tarea.completada = !tarea.completada;
-                }
-    
-                function eliminarCompletadas() {
-                    tareas.value = tareas.value.filter(tarea => !tarea.completada);
-                }
-    
-                return {
-                    tareas,
-                    nuevaTarea,
-                    mostrarCompletadas,
-                    tareasFiltradas,
-                    tareasPendientes,
-                    hayCompletadas,
-                    agregarTarea,
-                    toggleTarea,
-                    eliminarCompletadas
-                };
-            }
-        }).mount('#app');
-    </script>
-
-    <style>
-        .completed {
-            text-decoration: line-through;
-            color: gray;
-        }
-        button:disabled {
-            opacity: 0.5;
-            cursor: not-allowed;
-        }
-    </style>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vite + Vue</title>
+  </head>
+  <body>
+    <div id="app"></div>
+    <script type="module" src="/src/main.js"></script>
+  </body>
 </html>

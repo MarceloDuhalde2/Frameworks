@@ -1,0 +1,26 @@
+# Archivos generados por Node.js y npm
+node_modules/
+dist/
+build/
+# Archivos de configuración local
+.env
+.local
+# Archivos de caché y temporales
+*.log
+*.tmp
+*.bak
+# Archivos de desarrollo y depuración
+.vscode/
+.idea/
+*.swp
+*.swo
+# Archivos de pruebas y cobertura
+coverage/
+test-reports/
+# Archivos generados por Vite
+vite.config.ts
+vite.config.js
+# Archivos de sistema
+.DS_Store
+Thumbs.db
+
