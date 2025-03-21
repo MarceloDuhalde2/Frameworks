@@ -1,0 +1,28 @@
+<div class="titulo-pagina">League Standings</div>
+<!-- Tabla con el ranking de equipos -->
+<table class="tabla-ranking">
+  <thead class="tabla-cabecera">
+    <tr class="fila-cabecera">
+      <th class="celda-cabecera">Team Name</th>
+      <th class="celda-cabecera">MP</th>
+      <th class="celda-cabecera gf-cabecera">GF</th>
+      <th class="celda-cabecera ga-cabecera">GA</th>
+      <th class="celda-cabecera gd-cabecera">GD</th>
+      <th class="celda-cabecera">Points</th>
+    </tr>
+  </thead>
+  <tbody>
+    <!-- Recorremos los equipos en el leaderboard -->
+    <tr *ngFor="let team of leaderboard" class="fila">
+      <td class="celda celda-nombre-equipo">
+        <img [src]="'https://flagsapi.codeaid.io/' + team.teamName + '.png'" class="bandera-equipo" alt="{{ team.teamName }} Flag">
+        {{ team.teamName }}
+      </td>
+      <td class="celda">{{ team.matchesPlayed }}</td>
+      <td class="celda gf-celda">{{ team.goalsFor }}</td>
+      <td class="celda ga-celda">{{ team.goalsAgainst }}</td>
+      <td class="celda gd-celda">{{ getGoalDifference(team) }}</td>
+      <td class="celda">{{ team.points }}</td>
+    </tr>
+  </tbody>
+</table>

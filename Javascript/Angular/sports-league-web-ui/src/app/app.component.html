@@ -1,0 +1,23 @@
+<header class="cabecera">
+  <div class="contenedor-cabecera">
+    <img src="assets/images/logo.svg" alt="League Web UI Logo" class="logo-principal">
+    <nav class="nav">
+      <a routerLink="/schedule" class="link-navegacion">
+        <img src="assets/images/schedule.png" alt="Schedule Icon" class="icono-navegacion">
+        Schedule
+      </a>
+      <a routerLink="/leaderboard" class="link-navegacion">
+        <img src="assets/images/leaderboard.png" alt="Leaderboard Icon" class="icono-navegacion">
+        Leaderboard
+      </a>
+    </nav>
+  </div>
+</header>
+
+<main class="principal">
+  <router-outlet></router-outlet>
+</main>
+
+<footer class="footer">
+  <span class="footer-texto">API Version: 1.0</span>
+</footer>

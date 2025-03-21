@@ -1,0 +1,98 @@
+/* Título de la página */
+.titulo-pagina {
+    color: #182C62;
+    font-size: 24px;
+    text-align: center;
+    padding-top: 60px;
+    padding-bottom: 20px;
+    font-weight: bold;
+}
+
+/* Tabla completa */
+.tabla-ranking {
+    width: 90%;
+    border-collapse: collapse;
+    margin: 0 auto;
+}
+
+/* Encabezado de la tabla */
+.tabla-cabecera {
+    background-color: #E4EDF2;
+}
+
+/* fila cabecera */
+.fila-cabecera {
+    height: 40px;
+}
+
+/* Celdas de cabecera */
+.celda-cabecera {
+    font-size: 12px;
+    color: #4B5C68;
+    //padding: 20px;
+}
+
+/* Fila */
+.fila {
+    height: 70px;
+}
+
+/* borde inferior para la tabla */
+.tabla-ranking tbody tr:not(:last-child) {
+    border-bottom: 2px solid #E4EDF2;
+  }
+
+/* Celdas del cuerpo */
+.celda {
+    font-size: 14px;
+    color: #4B5C68;
+    //padding: 20px;
+    text-align: center;
+    //line-height: 70px;
+    //min-height: 70px;
+}
+
+/* Celda del nombre del equipo */
+.celda-nombre-equipo {
+    font-size: 16px;
+    font-weight: bold;
+    text-align: left;
+}
+
+/* Bandera de los equipos */
+.bandera-equipo {
+    width: 53px;
+    height: 37px;
+    margin-right: 10px;
+    vertical-align: middle;
+}
+
+/* GD oculta por defecto */
+.gd-cabecera,
+.gd-celda {
+  display: none;
+}
+
+/* Responsividad */
+@media (max-width: 750px) {
+    .tabla-ranking {
+        max-width: 750px;
+    }
+}
+
+@media (max-width: 500px) {
+    .tabla-ranking {
+        max-width: 500px;
+    }
+    
+    .gf-cabecera,
+    .gf-celda,
+    .ga-cabecera,
+    .ga-celda {
+        display: none;
+    }
+    .gd-cabecera,
+    .gd-celda {
+        display: table-cell;
+    }
+}

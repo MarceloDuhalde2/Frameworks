@@ -1,0 +1,65 @@
+/* Cabecera */
+.cabecera {
+  background-color: #025FEB; 
+  padding: 10px 40px; 
+}
+
+/* Contenedor cabecera */
+.contenedor-cabecera {
+  display: flex; 
+  justify-content: space-between;
+  align-items: center; 
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+/* Logo principal */
+.logo-principal {
+  width: 110px;
+}
+
+/* Navegación */
+.link-navegacion {
+  display: inline-flex;
+  align-items: center;
+  color: #FFFFFF;
+  font-size: 16px;
+  text-decoration: none;
+  line-height: 25px;
+}
+
+
+.link-navegacion:first-child {
+  margin-right: 40px;
+}
+
+/* Icono */
+.icono-navegacion {
+  //width: 25px;
+  height: 25px;
+  margin-right: 5px;
+}
+
+/* Contenedor principal */
+.principal {
+  //max-width: 1000px;
+  //margin: 20px auto;
+}
+
+/* Footer */
+.footer {
+  background-color: #F6F7F7;
+  //padding: 10px;
+  text-align: right;
+  //max-width: 1000px;
+  margin: 0 auto;
+  height: 40px;
+  align-content: space-evenly;
+  padding-right: 40px;
+}
+
+/* Texto del footer */
+.footer-texto {
+  color: #4B5C68;
+  font-size: 14px;
+}

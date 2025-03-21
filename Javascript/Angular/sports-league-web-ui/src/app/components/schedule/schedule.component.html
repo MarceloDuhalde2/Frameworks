@@ -1,0 +1,32 @@
+<div class="titulo-pagina">League Schedule</div>
+<!-- Tabla con el calendario de partidos -->
+<table class="tabla-calendario">
+  <thead class="tabla-cabecera">
+    <tr class="fila-cabecera">
+      <th class="celda-cabecera fecha-hora-cabecera">Date/Time</th>
+      <th class="celda-cabecera estadio-cabecera">Stadium</th>
+      <th class="celda-cabecera">Home Team</th>
+      <th class="celda-cabecera"></th>
+      <th class="celda-cabecera">Away Team</th>
+    </tr>
+  </thead>
+  <tbody>
+    <!-- Recorro los partidos -->
+    <tr *ngFor="let match of matches; let i = index" [ngClass]="{'fila-par': i % 2 === 0, 'fila-impar': i % 2 !== 0}">
+      <td class="celda fecha-hora-celda">{{ formatDate(match.matchDate) }}</td>
+      <td class="celda estadio-celda">{{ match.stadium }}</td>
+      <td class="celda equipo-local">
+        {{ match.homeTeam }}
+        <img [src]="'https://flagsapi.codeaid.io/' + match.homeTeam + '.png'" class="equipo-bandera local-bandera" alt="{{ match.homeTeam }} Flag">
+      </td>
+      <td class="celda celda-resultado">
+        <span *ngIf="match.matchPlayed" class="score">{{ match.homeTeamScore }} : {{ match.awayTeamScore }}</span>
+        <span *ngIf="!match.matchPlayed" class="no-score">- : -</span>
+      </td>
+      <td class="celda equipo-visitante">
+        <img [src]="'https://flagsapi.codeaid.io/' + match.awayTeam + '.png'" class="equipo-bandera visitante-bandera" alt="{{ match.awayTeam }} Flag">
+        {{ match.awayTeam }}
+      </td>
+    </tr>
+  </tbody>
+</table>

@@ -1,0 +1,10 @@
+/* Centrar la imagen */
+.contenedor {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 50px;
+    min-height: 300px;
+    max-width: 100%;
+    overflow-x: auto;
+  }

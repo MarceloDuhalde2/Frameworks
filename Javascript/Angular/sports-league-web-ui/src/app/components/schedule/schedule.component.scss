@@ -1,0 +1,106 @@
+/* Título de la página */
+.titulo-pagina {
+    color: #182C62;
+    font-size: 24px;
+    text-align: center;
+    padding-top: 60px;
+    padding-bottom: 20px;
+    font-weight: bold;
+}
+
+/* Tabla completa */
+.tabla-calendario {
+    width: 90%;
+    border-collapse: collapse;
+    margin: 0 auto;
+    color: #4B5C68;
+}
+
+/* Celdas del encabezado */
+.celda-cabecera {
+    font-size: 12px;
+    color: #4B5C68;
+    //padding: 20px;
+}
+
+/* fila cabecera */
+.fila-cabecera {
+    background-color: #E4EDF2;
+    height: 40px;
+}
+/* Celdas del cuerpo */
+.celda {
+    font-size: 14px;
+    //color: #4B5C68;
+    //padding: 20px;
+    text-align: center;
+    line-height: 70px;
+    min-height: 70px;
+}
+
+/* Celda del equipo local */
+.equipo-local {
+    font-size: 16px;
+    font-weight: bold;
+    text-align: right;
+    min-width: 55px;
+}
+
+/* Celda del equipo visitante */
+.equipo-visitante {
+    font-size: 16px;
+    font-weight: bold;
+    text-align: left;
+    min-width: 55px;
+}
+
+/* Banderas de los equipos */
+.equipo-bandera {
+    vertical-align: middle;
+}
+
+.local-bandera {
+    width: 53px;
+    height: 37px;
+}
+
+.visitante-bandera {
+    width: 53px;
+    height: 37px;
+}
+
+/* Filas pares */
+.fila-par {
+    background-color: #F6F7F7;
+    height: 70px;
+}
+/* Filas impares */
+.fila-impar {
+    height: 70px;
+}
+/* Celda de resultados */
+.celda-resultado {
+    text-align: center;
+}
+  
+/* Responsividad */
+@media (max-width: 750px) {
+    .tabla-calendario {
+        max-width: 750px;
+    }
+    .estadio-cabecera,
+    .estadio-celda {
+        display: none;
+    }
+    
+}
+  
+@media (max-width: 500px) {
+    .tabla-calendario {
+        max-width: 500px;
+    }
+    .fecha-hora-cabecera,
+    .fecha-hora-celda {
+        display: none;
+    }
+}
